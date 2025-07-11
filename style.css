@@ -1,0 +1,308 @@
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+/* Basic reset and font */
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(90deg, #06002e 0%, #009fe3 100%);
+  min-height: 100vh;
+}
+
+/* Heading */
+h1 {
+  margin: 30px 0;
+  text-align: center;
+  font-weight: 800;
+  padding-left: 15px;
+  color: #fff;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Form */
+#todo-form {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 90%;
+  max-width: 1400px;
+  margin: 30px auto;
+}
+
+/* Input */
+#todo-input {
+  flex: 1;
+  padding: 15px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#todo-input:focus {
+  border-color: #009fe3;
+}
+
+/* Add Button */
+.add-btn {
+  background: #ff9800;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.add-btn:hover {
+  background: #e67c00;
+}
+
+/* List Container */
+#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 40%;
+  min-width: 350px;
+  margin: 0 auto;
+}
+
+/* List Items */
+#todo-list li {
+  background: #fff;
+  margin-bottom: 18px;
+  padding: 18px 24px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  font-size: 1.15rem;
+  transition: box-shadow 0.2s;
+}
+
+#todo-list li:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #ff2e2e;
+  cursor: pointer;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #e57373;
+  color: #fff;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 7px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background: #c62828;
+  font-size: 1.1rem;
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  margin-right: 10px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+/* Edit Button */
+.edit-btn {
+  background: #64b5f6;
+  color: #fff;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 7px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.edit-btn:hover {
+  background: #1976d2;
+}
+
+/* Edit Mode Input */
+#todo-list li input[type="text"] {
+  font-size: 1.1rem;
+  padding: 8px 14px;
+  border-radius: 7px;
+  border: 1px solid #bbb;
+  margin-right: 12px;
+  outline: none;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  transition: border-color 0.2s;
+}
+
+#todo-list li input[type="text"]:focus {
+  border-color: #009fe3;
+}
+
+/* Save and Cancel Buttons */
+.save-btn,
+.cancel-btn {
+  background: #64b5f6;
+  color: #fff;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 7px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 8px;
+  transition: background 0.2s;
+}
+
+.save-btn:hover {
+  background: #1976d2;
+}
+
+.cancel-btn {
+  background: #e57373;
+}
+
+.cancel-btn:hover {
+  background: #c62828;
+}
+
+/* Focus Accessibility */
+input:focus-visible,
+button:focus-visible {
+  outline: 2px solid #009fe3;
+  outline-offset: 2px;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  #todo-list {
+    width: 80%;
+    min-width: unset;
+  }
+
+  #todo-form {
+    flex-direction: column;
+    width: 98%;
+    gap: 12px;
+  }
+
+  #todo-input,
+  .add-btn {
+    width: 100%;
+  }
+}
+
+/* Edit Mode Styles */
+.edit-mode {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-mode input[type="text"] {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.edit-mode input[type="text"]:focus {
+  border-color: #009fe3;
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.save-btn {
+  background: #4caf50;
+  color: #fff;
+}
+
+.save-btn:hover {
+  background: #388e3c;
+}
+
+.cancel-btn {
+  background: #f44336;
+  color: #fff;
+}
+
+.cancel-btn:hover {
+  background: #c62828;
+}
+
+/* Task Item in Edit Mode */
+.task-item-edit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.task-item-edit input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.task-item-edit input[type="text"]:focus {
+  border-color: #009fe3;
+}
+
+.task-item-edit .save-btn,
+.task-item-edit .cancel-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.task-item-edit .save-btn {
+  background: #4caf50;
+  color: #fff;
+}
+
+.task-item-edit .save-btn:hover {
+  background: #388e3c;
+}
+
+.task-item-edit .cancel-btn {
+  background: #f44336;
+  color: #fff;
+}
+
+.task-item-edit .cancel-btn:hover {
+  background: #c62828;
+}
